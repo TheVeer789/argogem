@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: devops-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: job-container
+        image: busybox
+        command: ["sh", "-c", "echo Hello DevOps && sleep 5"]
+      restartPolicy: Never

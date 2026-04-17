@@ -1,0 +1,10 @@
+services:
+  nginx:
+    image: nginx
+    ports:
+      - "8080:80"
+  ubuntu:
+    image: ubuntu
+    tty: true    
+    ports:
+      - "8081:80"

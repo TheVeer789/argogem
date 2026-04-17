@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: devops-cron
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: cron-container
+            image: busybox
+            command: ["sh", "-c", "date; echo DevOps Cron"]
+          restartPolicy: Never
